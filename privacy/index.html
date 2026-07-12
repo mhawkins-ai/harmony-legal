@@ -5,117 +5,343 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy • Harmony</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
-        
-        body {
-            font-family: 'Inter', system_ui, sans-serif;
+        :root {
+            --cream: #faf7f2;
+            --gold: #c4a35a;
+            --gold-soft: #e8d5a3;
+            --gold-deep: #a8843a;
+            --ink: #3a3632;
+            --ink-muted: #7a746c;
+            --ink-faint: #a39e96;
+            --card: rgba(255, 252, 248, 0.72);
+            --border: rgba(196, 163, 90, 0.18);
         }
-        
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            color: var(--ink);
+            min-height: 100vh;
+            margin: 0;
+            background:
+                radial-gradient(ellipse 70% 40% at 50% -5%, rgba(232, 200, 120, 0.18) 0%, transparent 50%),
+                radial-gradient(ellipse 50% 35% at 100% 60%, rgba(200, 180, 220, 0.12) 0%, transparent 50%),
+                linear-gradient(165deg, #faf8f5 0%, #f5f0f8 50%, #f8f4ef 100%);
+            background-attachment: fixed;
+        }
+
         .heading-serif {
-            font-family: 'Playfair Display', Georgia, serif;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+        }
+
+        /* Nav */
+        .nav-bar {
+            background: rgba(255, 252, 248, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .logo-mark {
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            background: linear-gradient(145deg, #e8c878 0%, #d4a84b 50%, #c4a35a 100%);
+            box-shadow:
+                0 2px 10px rgba(196, 163, 90, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.45);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.3rem 0.85rem;
+            border-radius: 999px;
+            border: 1px solid rgba(196, 163, 90, 0.35);
+            color: var(--gold-deep);
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            background: rgba(255, 252, 248, 0.7);
+        }
+
+        .nav-link {
+            color: var(--ink-muted);
+            font-size: 0.875rem;
+            font-weight: 400;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--gold-deep);
+        }
+
+        /* Content */
+        .legal-content {
+            max-width: 42rem;
+        }
+
+        .legal-content p {
+            margin: 0 0 1.15rem;
+            line-height: 1.75;
+            color: var(--ink);
+            font-size: 0.975rem;
+            font-weight: 400;
+        }
+
+        .legal-content ul {
+            margin: 0 0 1.25rem;
+            padding-left: 1.25rem;
+            list-style: none;
+        }
+
+        .legal-content ul li {
+            position: relative;
+            padding-left: 0.5rem;
+            margin-bottom: 0.55rem;
+            line-height: 1.7;
+            color: var(--ink);
+            font-size: 0.975rem;
+        }
+
+        .legal-content ul li::before {
+            content: '';
+            position: absolute;
+            left: -1rem;
+            top: 0.65em;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--gold);
+            opacity: 0.7;
         }
 
         .legal-content h2 {
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: #14532d;
-            margin-top: 2rem;
-            margin-bottom: 0.75rem;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.65rem;
+            font-weight: 500;
+            color: var(--ink);
+            margin: 2.5rem 0 0.85rem;
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: baseline;
+            gap: 0.65rem;
         }
-        
+
+        .legal-content h2 .num {
+            font-size: 0.75rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            color: var(--gold-deep);
+            letter-spacing: 0.06em;
+            opacity: 0.85;
+            flex-shrink: 0;
+        }
+
         .legal-content h3 {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             font-weight: 600;
-            color: #374151;
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
+            color: var(--ink);
+            margin: 1.5rem 0 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .legal-content a {
+            color: var(--gold-deep);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(168, 132, 58, 0.3);
+            transition: border-color 0.2s ease;
+        }
+
+        .legal-content a:hover {
+            border-bottom-color: var(--gold-deep);
         }
 
         .callout {
-            background-color: #f8f7f2;
-            border-left: 4px solid #b8860b;
-            padding: 1rem 1.25rem;
-            margin: 1.25rem 0;
+            background: rgba(255, 252, 248, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--gold);
+            border-radius: 1rem;
+            padding: 1.15rem 1.35rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 12px rgba(90, 70, 50, 0.03);
+        }
+
+        .callout p {
+            margin: 0;
+            font-size: 0.925rem;
+            line-height: 1.65;
+        }
+
+        .callout strong {
+            color: var(--gold-deep);
+            font-weight: 600;
+        }
+
+        .contact-card {
+            background: rgba(255, 252, 248, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: 1.25rem;
+            padding: 1.35rem 1.5rem;
+            margin-top: 1rem;
+            box-shadow:
+                0 4px 20px rgba(90, 70, 50, 0.04),
+                inset 0 1px 0 rgba(255, 255, 255, 0.7);
+        }
+
+        .contact-card p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .contact-card p + p {
+            margin-top: 0.5rem;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.9rem;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: rgba(255, 252, 248, 0.7);
+            color: var(--gold-deep);
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            background: rgba(255, 252, 248, 0.5);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .sparkle {
+            position: fixed;
+            width: 3px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 50%;
+            opacity: 0.28;
+            pointer-events: none;
+            z-index: 0;
+            box-shadow: 0 0 6px rgba(196, 163, 90, 0.4);
+        }
+
+        .page-wrap {
+            position: relative;
+            z-index: 1;
         }
     </style>
 </head>
-<body class="bg-[#f9f7f2] text-[#374151]">
-    <nav class="bg-white border-b border-[#e5e5e0] sticky top-0 z-50">
-        <div class="max-w-4xl mx-auto px-6 py-5 flex items-center justify-between">
-            <div class="flex items-center gap-x-3">
-                <div class="flex items-center gap-x-2">
-                    <div class="w-9 h-9 bg-[#14532d] rounded-2xl flex items-center justify-center">
-                        <span class="text-white text-2xl font-bold tracking-tighter">H</span>
-                    </div>
-                    <span class="font-semibold text-2xl tracking-tight text-[#14532d]">Harmony</span>
+<body>
+    <div class="sparkle" style="top:12%; left:8%;" aria-hidden="true"></div>
+    <div class="sparkle" style="top:28%; right:10%; width:2px; height:2px;" aria-hidden="true"></div>
+    <div class="sparkle" style="top:70%; left:5%; width:2px; height:2px; opacity:0.2;" aria-hidden="true"></div>
+
+    <div class="page-wrap">
+        <nav class="nav-bar">
+            <div class="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <a href="/" class="flex items-center gap-2.5 no-underline">
+                        <div class="logo-mark">
+                            <span class="text-white text-lg font-medium heading-serif" style="line-height:1;">H</span>
+                        </div>
+                        <span class="heading-serif text-2xl font-medium text-[var(--ink)] tracking-tight">Harmony</span>
+                    </a>
+                    <span class="nav-pill hidden sm:inline-flex">Privacy Policy</span>
                 </div>
-                <div class="hidden sm:block text-sm px-3 py-1 bg-[#f1ede3] text-[#14532d] rounded-full font-medium">
-                    Privacy Policy
+                <div class="flex items-center gap-5">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/terms" class="nav-link">Terms</a>
                 </div>
             </div>
-            <div class="flex items-center gap-x-4 text-sm">
-                <a href="/" class="text-[#6b6b5f] hover:text-[#14532d] transition-colors">Home</a>
-                <a href="/terms" class="text-[#6b6b5f] hover:text-[#14532d] transition-colors">Terms</a>
+        </nav>
+
+        <!-- Hero -->
+        <header class="max-w-3xl mx-auto px-6 pt-14 pb-6">
+            <div class="section-label mb-5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                Legal
+            </div>
+            <h1 class="heading-serif text-5xl sm:text-[3.25rem] font-medium tracking-tight text-[var(--ink)] leading-[1.1]" style="letter-spacing:-0.02em;">
+                Privacy Policy
+            </h1>
+            <p class="mt-4 text-[var(--ink-muted)] text-base font-light">
+                Last updated: <span class="font-medium text-[var(--ink)]">July 11, 2026</span>
+            </p>
+        </header>
+
+        <!-- Body -->
+        <div class="max-w-3xl mx-auto px-6 pb-16 legal-content">
+            <p>Harmony ("<strong>Harmony</strong>", "<strong>we</strong>", "<strong>us</strong>", or "<strong>our</strong>") provides a neutral, educational interfaith companion application that offers daily verses, a convergence calendar, and an AI-powered oracle ("Sage").</p>
+
+            <p>This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our iOS application.</p>
+
+            <h2><span class="num">01</span> Information We Collect</h2>
+
+            <h3>Information Collected Automatically (On-Device Only)</h3>
+            <ul>
+                <li>App preferences and settings (e.g., notification time for Daily Verse).</li>
+                <li>Local usage data such as viewed verses, calendar interactions, and conversation history (stored only on your device).</li>
+            </ul>
+
+            <div class="callout">
+                <p><strong>Important:</strong> The vast majority of Harmony operates entirely on your device. No personal data leaves your phone unless you use the Sage AI feature.</p>
+            </div>
+
+            <h3>Information Sent When Using Sage (AI Oracle)</h3>
+            <p>When you send a message to Sage, your query is sent through our secure proxy to Anthropic to generate a response. We do not store your conversations long-term on our servers.</p>
+
+            <h2><span class="num">02</span> How We Use Your Information</h2>
+            <p>We use the information to deliver the Service, improve the app, enforce usage limits, and respond to support requests.</p>
+
+            <h2><span class="num">03</span> Sharing and Disclosure</h2>
+            <p>We only share information with Anthropic (for AI responses) and Apple (for Sign in with Apple and subscriptions). We do not sell your personal information.</p>
+
+            <h2><span class="num">04</span> Data Retention and Deletion</h2>
+            <p>All app data is stored locally on your device. You can permanently delete everything at any time via <strong>Settings → Delete everything</strong>.</p>
+
+            <h2><span class="num">05</span> Your Privacy Rights</h2>
+            <p>You control notifications, data deletion, and Sage usage directly in the app. You can manage Sign in with Apple through your Apple ID settings.</p>
+
+            <h2><span class="num">06</span> Contact Us</h2>
+            <p>If you have questions, please contact us at:</p>
+            <div class="contact-card">
+                <p><strong>Email:</strong> <a href="mailto:support@harmonydailywisdom.com">support@harmonydailywisdom.com</a></p>
+                <p><strong>Website:</strong> <a href="https://harmonydailywisdom.com">harmonydailywisdom.com</a></p>
             </div>
         </div>
-    </nav>
 
-    <div class="max-w-4xl mx-auto px-6 pt-12 pb-8">
-        <div class="max-w-2xl">
-            <div class="inline-flex items-center gap-x-2 px-4 py-1.5 bg-white rounded-3xl shadow-sm border border-[#e5e5e0] mb-6">
-                <i class="fa-solid fa-shield-halved text-[#b8860b]"></i>
-                <span class="text-sm font-medium text-[#14532d]">Legal</span>
+        <footer>
+            <div class="max-w-3xl mx-auto px-6 text-center">
+                <p class="text-sm text-[var(--ink-faint)] tracking-wide">© Harmony. All rights reserved.</p>
             </div>
-            <h1 class="text-5xl font-semibold tracking-tighter text-[#14532d] heading-serif">Privacy Policy</h1>
-            <p class="mt-4 text-xl text-[#6b6b5f]">Last updated: <span class="font-medium">July 11, 2026</span></p>
-        </div>
+        </footer>
     </div>
-
-    <div class="max-w-4xl mx-auto px-6 pb-20 legal-content">
-        <p class="text-lg">Harmony ("<strong>Harmony</strong>", "<strong>we</strong>", "<strong>us</strong>", or "<strong>our</strong>") provides a neutral, educational interfaith companion application that offers daily verses, a convergence calendar, and an AI-powered oracle ("Sage").</p>
-        
-        <p>This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our iOS application.</p>
-
-        <h2>1. Information We Collect</h2>
-        <h3>Information Collected Automatically (On-Device Only)</h3>
-        <ul>
-            <li>App preferences and settings (e.g., notification time for Daily Verse).</li>
-            <li>Local usage data such as viewed verses, calendar interactions, and conversation history (stored only on your device).</li>
-        </ul>
-        
-        <div class="callout rounded-2xl">
-            <p><strong>Important:</strong> The vast majority of Harmony operates entirely on your device. No personal data leaves your phone unless you use the Sage AI feature.</p>
-        </div>
-
-        <h3>Information Sent When Using Sage (AI Oracle)</h3>
-        <p>When you send a message to Sage, your query is sent through our secure proxy to Anthropic to generate a response. We do not store your conversations long-term on our servers.</p>
-
-        <h2>2. How We Use Your Information</h2>
-        <p>We use the information to deliver the Service, improve the app, enforce usage limits, and respond to support requests.</p>
-
-        <h2>3. Sharing and Disclosure</h2>
-        <p>We only share information with Anthropic (for AI responses) and Apple (for Sign in with Apple and subscriptions). We do not sell your personal information.</p>
-
-        <h2>4. Data Retention and Deletion</h2>
-        <p>All app data is stored locally on your device. You can permanently delete everything at any time via <strong>Settings → Delete everything</strong>.</p>
-
-        <h2>5. Your Privacy Rights</h2>
-        <p>You control notifications, data deletion, and Sage usage directly in the app. You can manage Sign in with Apple through your Apple ID settings.</p>
-
-        <h2>6. Contact Us</h2>
-        <p>If you have questions, please contact us at:</p>
-        <div class="mt-4 p-5 bg-white rounded-3xl border border-[#e5e5e0]">
-            <p><strong>Email:</strong> <a href="mailto:support@harmonydailywisdom.com" class="text-[#14532d] hover:underline">support@harmonydailywisdom.com</a></p>
-            <p class="mt-1"><strong>Website:</strong> <a href="https://harmonydailywisdom.com" class="text-[#14532d] hover:underline">harmonydailywisdom.com</a></p>
-        </div>
-    </div>
-
-    <footer class="bg-white border-t border-[#e5e5e0] py-8">
-        <div class="max-w-4xl mx-auto px-6 text-center text-sm text-[#6b6b5f]">
-            <p>© Harmony. All rights reserved.</p>
-        </div>
-    </footer>
 </body>
 </html>
