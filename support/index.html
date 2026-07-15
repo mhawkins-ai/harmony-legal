@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service • Harmony</title>
+    <title>Support • Harmony</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -99,35 +99,15 @@
             font-weight: 400;
         }
 
-        .legal-content ul {
-            margin: 0;
-            padding-left: 1.15rem;
-            list-style: none;
+        .legal-content a {
+            color: var(--gold-deep);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(168, 132, 58, 0.3);
+            transition: border-color 0.2s ease;
         }
 
-        .legal-content ul li {
-            position: relative;
-            padding-left: 0.5rem;
-            margin-bottom: 0.6rem;
-            line-height: 1.65;
-            color: var(--ink);
-            font-size: 0.9rem;
-        }
-
-        .legal-content ul li:last-child {
-            margin-bottom: 0;
-        }
-
-        .legal-content ul li::before {
-            content: '';
-            position: absolute;
-            left: -0.95rem;
-            top: 0.6em;
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            background: var(--gold);
-            opacity: 0.7;
+        .legal-content a:hover {
+            border-bottom-color: var(--gold-deep);
         }
 
         .legal-content h2 {
@@ -152,39 +132,31 @@
             flex-shrink: 0;
         }
 
-        .legal-content a {
-            color: var(--gold-deep);
-            text-decoration: none;
-            border-bottom: 1px solid rgba(168, 132, 58, 0.3);
-            transition: border-color 0.2s ease;
-        }
-
-        .legal-content a:hover {
-            border-bottom-color: var(--gold-deep);
-        }
-
-        .disclaimer-box {
-            background: linear-gradient(135deg, rgba(255, 252, 248, 0.85) 0%, rgba(248, 242, 228, 0.7) 100%);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(196, 163, 90, 0.28);
+        .faq-card {
+            background: rgba(255, 252, 248, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
             border-radius: 1.15rem;
-            padding: 1.35rem 1.5rem;
-            margin: 1.5rem 0;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 0.9rem;
             box-shadow:
                 0 4px 20px rgba(90, 70, 50, 0.04),
-                inset 0 1px 0 rgba(255, 255, 255, 0.6);
+                inset 0 1px 0 rgba(255, 255, 255, 0.7);
         }
 
-        .disclaimer-box .title {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 1.2rem;
+        .faq-card .q {
             font-weight: 600;
-            color: var(--gold-deep);
-            margin: 0 0 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            color: var(--ink);
+            margin: 0 0 0.4rem;
+            font-size: 0.95rem;
+        }
+
+        .faq-card .a {
+            margin: 0;
+            color: var(--ink-muted);
+            font-size: 0.9rem;
+            line-height: 1.65;
         }
 
         .contact-card {
@@ -222,22 +194,6 @@
             font-weight: 500;
             letter-spacing: 0.06em;
             text-transform: uppercase;
-        }
-
-        .closing {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
-            text-align: center;
-        }
-
-        .closing p {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 1.35rem;
-            font-weight: 500;
-            color: var(--ink);
-            margin: 0;
-            font-style: italic;
         }
 
         footer {
@@ -282,12 +238,12 @@
                         </div>
                         <span class="heading-serif text-2xl font-medium text-[var(--ink)] tracking-tight">Harmony</span>
                     </a>
-                    <span class="nav-pill hidden sm:inline-flex">Terms of Service</span>
+                    <span class="nav-pill hidden sm:inline-flex">Support</span>
                 </div>
                 <div class="flex items-center gap-5">
                     <a href="/" class="nav-link">Home</a>
+                    <a href="/terms" class="nav-link">Terms</a>
                     <a href="/privacy" class="nav-link">Privacy</a>
-                    <a href="/support" class="nav-link">Support</a>
                 </div>
             </div>
         </nav>
@@ -296,63 +252,53 @@
         <header class="max-w-3xl mx-auto px-6 pt-14 pb-6">
             <div class="section-label mb-5">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                    <polyline points="14 2 14 8 20 8"/>
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
                 </svg>
-                Legal
+                Help
             </div>
             <h1 class="heading-serif text-5xl sm:text-[3.25rem] font-medium tracking-tight text-[var(--ink)] leading-[1.1]" style="letter-spacing:-0.02em;">
-                Terms of Service
+                Support
             </h1>
             <p class="mt-4 text-[var(--ink-muted)] text-base font-light">
-                Last updated: <span class="font-medium text-[var(--ink)]">July 11, 2026</span>
+                We're happy to help. Reach out any time or browse common questions below.
             </p>
         </header>
 
         <!-- Body -->
         <div class="max-w-3xl mx-auto px-6 pb-16 legal-content">
-            <p>These Terms of Service govern your access to and use of the Harmony mobile application and related services.</p>
-
-            <p>By using the Service, you agree to be bound by these Terms.</p>
-
-            <h2><span class="num">01</span> Description of the Service</h2>
-            <p>Harmony is a neutral, educational interfaith companion app. It includes daily verses, a convergence calendar, and "Sage" — an AI-powered oracle with built-in guardrails.</p>
-
-            <div class="disclaimer-box">
-                <p class="title">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"/>
-                        <line x1="12" y1="8" x2="12" y2="12"/>
-                        <line x1="12" y1="16" x2="12.01" y2="16"/>
-                    </svg>
-                    Important Disclaimers
-                </p>
-                <ul>
-                    <li>The Service is for <strong>educational and personal use only</strong>. It is not a substitute for professional religious guidance or counseling.</li>
-                    <li>AI responses may occasionally be inaccurate. Always verify important information with qualified sources.</li>
-                    <li>Harmony does not endorse or rank any particular faith.</li>
-                </ul>
-            </div>
-
-            <h2><span class="num">02</span> Eligibility and Accounts</h2>
-            <p>You must be at least 17 years old. You can delete all local data at any time via Settings → Delete everything.</p>
-
-            <h2><span class="num">03</span> Subscriptions</h2>
-            <p>Premium features are available via auto-renewing subscriptions billed through the App Store. You can manage or cancel them in your Apple ID settings.</p>
-
-            <h2><span class="num">04</span> Acceptable Use</h2>
-            <p>You agree not to attempt to bypass AI guardrails or use the Service for harmful purposes.</p>
-
-            <h2><span class="num">05</span> Contact Us</h2>
+            <h2><span class="num">01</span> Contact Us</h2>
+            <p>For questions, feedback, or issues with the app, reach out and we'll get back to you as soon as we can.</p>
             <div class="contact-card">
                 <p><strong>Email:</strong> <a href="mailto:support@harmonydailywisdom.com">support@harmonydailywisdom.com</a></p>
                 <p><strong>Website:</strong> <a href="https://harmonydailywisdom.com">harmonydailywisdom.com</a></p>
-                <p><strong>Support:</strong> <a href="https://harmonydailywisdom.com/support">harmonydailywisdom.com/support</a></p>
             </div>
 
-            <div class="closing">
-                <p>Thank you for using Harmony responsibly.</p>
+            <h2><span class="num">02</span> Frequently Asked Questions</h2>
+
+            <div class="faq-card">
+                <p class="q">How do I delete my data?</p>
+                <p class="a">Open the app and go to Settings → Delete everything. This permanently removes all locally stored data, including your conversation history and preferences.</p>
             </div>
+
+            <div class="faq-card">
+                <p class="q">How do I manage or cancel my subscription?</p>
+                <p class="a">Subscriptions are billed through the App Store. You can manage or cancel them anytime in your device's Settings → Apple ID → Subscriptions.</p>
+            </div>
+
+            <div class="faq-card">
+                <p class="q">Is my data private?</p>
+                <p class="a">Yes. Harmony runs almost entirely on your device. The only exception is when you use Sage, our AI oracle, which sends your query through a secure proxy to generate a response. See our <a href="/privacy">Privacy Policy</a> for details.</p>
+            </div>
+
+            <div class="faq-card">
+                <p class="q">I found a bug or have a feature request.</p>
+                <p class="a">We'd love to hear about it. Email us at <a href="mailto:support@harmonydailywisdom.com">support@harmonydailywisdom.com</a> with as much detail as you can share, including your device model and iOS version.</p>
+            </div>
+
+            <h2><span class="num">03</span> More Information</h2>
+            <p>See our <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a> for details on how Harmony works and how we handle your information.</p>
         </div>
 
         <footer>
